@@ -15,6 +15,27 @@ app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
 });
 
+app.get('/basic-canvas/index.html', function(req, res){
+  //send the index.html file for all requests
+  res.sendFile(__dirname + '/basic-canvas/index.html');
+});
+app.get('/basic-hammerjs/index.html', function(req, res){
+  //send the index.html file for all requests
+  res.sendFile(__dirname + '/basic-hammerjs/index.html');
+});
+app.get('/drag-hammerjs/index.html', function(req, res){
+  //send the index.html file for all requests
+  res.sendFile(__dirname + '/drag-hammerjs/index.html');
+});
+app.get('/touch-toy/index.html', function(req, res){
+  //send the index.html file for all requests
+  res.sendFile(__dirname + '/touch-toy/index.html');
+});
+app.get('/zoom-hammerjs/index.html', function(req, res){
+  //send the index.html file for all requests
+  res.sendFile(__dirname + '/zoom-hammerjs/index.html');
+});
+
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -35,7 +56,6 @@ function onSocketConnect(socket) {
     console.log("Socket.io Client Connected");
 
     caress.on('tuio', function(msg){
-      console.log("Server Caress Tuio: ", msg);
       socket.emit('tuio', msg);
     });
 
