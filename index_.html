@@ -1,0 +1,20 @@
+<html>
+<head></head>
+
+<body>
+  	<div id="message"></div>
+	<script src="/socket.io/socket.io.js"></script>
+  	<script>
+  	var socket = io();
+
+	socket.on('message', function(msg){
+	  document.getElementById("message").innerHTML = msg;
+	});
+
+	socket.on('tuio', function(msg){
+	  document.getElementById("message").innerHTML = JSON.stringify(msg);
+	});
+
+	</script>
+</body>
+</html>
